@@ -1,0 +1,74 @@
+{
+  "Version": "v1",
+  "MappingFields": [
+    {
+      "Name": "Medewerker",
+      "Description": "[Required]",
+      "Type": "Text",
+      "MappingActions": [
+        {
+          "MapForActions": [
+            "Create",
+            "Update"
+          ],
+          "MappingMode": "Field",
+          "Value": "\"Person.ExternalId\"",
+          "UsedInNotifications": false,
+          "StoreInAccountData": false
+        }
+      ]
+    },
+    {
+      "Name": "Persoonsnummer",
+      "Description": "[Required]",
+      "Type": "Text",
+      "MappingActions": [
+        {
+          "MapForActions": [
+            "Create",
+            "Update"
+          ],
+          "MappingMode": "None",
+          "Value": "\"\"",
+          "UsedInNotifications": false,
+          "StoreInAccountData": false
+        }
+      ]
+    },
+    {
+      "Name": "EmAd",
+      "Description": "",
+      "Type": "Text",
+      "MappingActions": [
+        {
+          "MapForActions": [
+            "Update",
+            "Delete"
+          ],
+          "MappingMode": "Complex",
+          "Value": "\"function getValue() {\\n    let mail = Person.Accounts._323531982e443937c3ec7ee46c161894.mail;\\n    return mail;\\n}\\n\\ngetValue();\"",
+          "UsedInNotifications": false,
+          "StoreInAccountData": false
+        }
+      ]
+    },
+    {
+      "Name": "EmailPortal",
+      "Description": "E-mail toegang - Check with AFAS Administrator if this needs to be set",
+      "Type": "Text",
+      "MappingActions": [
+        {
+          "MapForActions": [
+            "Update",
+            "Delete"
+          ],
+          "MappingMode": "Complex",
+          "Value": "\"function getValue() {\\r\\n    let mail = Person.Accounts._323531982e443937c3ec7ee46c161894.userPrincipalName;\\r\\n    return mail;\\r\\n}\\r\\n\\r\\ngetValue();\"",
+          "UsedInNotifications": false,
+          "StoreInAccountData": false
+        }
+      ]
+    }
+  ],
+  "UniqueFieldNames": []
+}
